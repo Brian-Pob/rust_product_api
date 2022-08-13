@@ -16,4 +16,7 @@ fn main() {
     product.set_count(2.0);
     product.get_total_price();
     println!("{:?}", product);
+
+    // let cs = unsafe { CART_SERVICE.get_current() };
+    // cs.add_product(product);
 }

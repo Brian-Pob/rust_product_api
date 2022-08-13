@@ -12,11 +12,13 @@ This project is a version of a Product management API coded in Rust. The origina
 
 ### Part 1
 
-1. Create a Product class
-    - How to structure files in a rust project?
-2. Create a CartService Singleton
-3. Create an InventoryService Singleton
-4. Create the Driver
+~~1. Create a Product class~~
+    - ~~How to structure files in a rust project?~~
+~~2. Create a CartService Singleton~~
+~~3. Create an InventoryService Singleton~~
+~~4. Create the Driver~~
+
+So far, I have found that it might not be possible to implement the API in Rust the same way it was implemented in C#. I will need to think about other ways to create the API.
 
 Side note: I also want to practice TDD with this project.
 

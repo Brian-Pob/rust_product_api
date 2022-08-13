@@ -1,5 +1,5 @@
 #[readonly::make]
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Product {
     pub id: i32,
     pub name: String,

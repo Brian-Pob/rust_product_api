@@ -1,14 +1,15 @@
-#[derive(Debug)]
-struct inventory_service {
+use crate::{CartService, Product};
+
+#[derive(Debug, Clone)]
+pub struct InventoryService {
     products: Vec<Product>,
     cart_service: CartService,
 }
 
-impl inventory_service {
-    pub fn new(cart_service: CartService) -> inventory_service {
-        inventory_service {
+impl InventoryService {
+    pub fn new() -> InventoryService {
+        InventoryService {
             products: Vec::new(),
-            cart_service,
         }
     }
 
@@ -39,21 +40,4 @@ impl inventory_service {
         }
         total_count
     }
-
-    // pub fn get_total_inventory(&self) -> f64 {
-    //     let mut total_inventory = 0.0;
-    //     for product in &self.products {
-    //         total_inventory += product.count * product.inventory_service.get_count(product.id);
-    //     }
-    //     total_inventory
-    // }
-
-    // pub fn get_total_inventory_price(&self) -> f64 {
-    //     let mut total_inventory_price = 0.0;
-    //     for product in &self.products {
-    //         total_inventory_price +=
-    //             product.count * product.inventory_service.get_price(product.id);
-    //     }
-    //     total_inventory_price
-    // }
 }
