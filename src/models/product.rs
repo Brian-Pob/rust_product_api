@@ -1,3 +1,5 @@
+use serde::{Deserialize, Serialize};
+
 pub trait Product {
     fn set_id(&mut self, id: i32);
     fn set_name(&mut self, name: String);
@@ -6,7 +8,7 @@ pub trait Product {
 }
 
 #[readonly::make]
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Base_Product {
     pub id: i32,
     pub name: String,
@@ -49,7 +51,7 @@ impl Base_Product {
 }
 
 #[readonly::make]
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Weight_Product {
     pub base: Base_Product,
     pub weight: f64,
@@ -94,7 +96,7 @@ impl Weight_Product {
 }
 
 #[readonly::make]
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Quantity_Product {
     pub base: Base_Product,
     pub quantity: i32,

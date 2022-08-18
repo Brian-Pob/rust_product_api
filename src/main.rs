@@ -59,8 +59,8 @@ fn main() {
     // In the docs, it is not the same as T, which should be the type of the object.
     // Any is literally a trait of its own.
     let mut dyn_list: Vec<Box<dyn Any>> = Vec::new();
-    dyn_list.push(Box::new(weight_product));
-    dyn_list.push(Box::new(quantity_product));
+    dyn_list.push(Box::new(weight_product.clone()));
+    dyn_list.push(Box::new(quantity_product.clone()));
 
     for product in dyn_list {
         if let Some(product) = product.downcast_ref::<Weight_Product>() {
@@ -75,4 +75,15 @@ fn main() {
     }
 
     // Now we're in business! 😎
+
+    // Now attempting to use serde.
+    println!("{}", serde_json::to_string(&product).unwrap());
+    println!("{}", serde_json::to_string(&weight_product).unwrap());
+    println!("{}", serde_json::to_string(&quantity_product).unwrap());
+
+    // Q: What happens if you try to deserialize a mismatched type?
+    // let q_json = serde_json::to_string(&quantity_product).unwrap();
+    // let w_product: Weight_Product = serde_json::from_str(&q_json).unwrap();
+    // println!("{:#?}", w_product);
+    // A: Rust will panic.
 }

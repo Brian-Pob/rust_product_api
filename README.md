@@ -24,6 +24,16 @@ One recommendation is to encapsulate the parent struct in the child struct. This
 
 For this project, I should probably learn traits. Traits in Rust are similar to interfaces in Java.
 
+So I have been able to implement polymorphism, or at least something that resembles it.
+My next goal is to implement serialization and deserialization and saving the data to a file.
+After that I could either try to implement MongoDB as my database or create the CLI to use the API.
+
+8/17/2022
+Today I am going to use serde to implement serialization and deserialization. I added the serde crate
+using `cargo add serde --features derive` as well as serde_json with `cargo add serde_json`.
+
+First thing I need to do is let my product class derive the Serialize and Deserialize traits.
+
 ### Part 2
 
 1. To follow...
