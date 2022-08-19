@@ -12,11 +12,12 @@ Side note: I also want to practice TDD with this project.
 
 ## TODO
 
-### Part 1
+### 8/13/2022
 
 So far, I have found that it might not be possible to implement the API in Rust the same way it was implemented in C#. I will need to think about other ways to create the API.
 
-8/15/2022
+### 8/15/2022
+
 I decided to take things a lot slower. My first goal will be to implement inheritance for the product model.
 
 So it looks like Rust does not support inheritance in the same way a traditional OOP-friendly language like Java does.
@@ -28,13 +29,15 @@ So I have been able to implement polymorphism, or at least something that resemb
 My next goal is to implement serialization and deserialization and saving the data to a file.
 After that I could either try to implement MongoDB as my database or create the CLI to use the API.
 
-8/17/2022
+### 8/17/2022
+
 Today I am going to use serde to implement serialization and deserialization. I added the serde crate
 using `cargo add serde --features derive` as well as serde_json with `cargo add serde_json`.
 
 First thing I need to do is let my product class derive the Serialize and Deserialize traits.
 
-8/19/2022
+### 8/19/2022
+
 I have successfully implemented serialization and deserialization. I found out that when you try to deserialize a mismatched JSON object, it will throw an error and Rust will panic.
 
 Now, I can try to implement MongoDB like I originally planned. However, I think I will try to implement testing first. Test Driver Developement
@@ -44,7 +47,3 @@ After that, I will try to implement MongoDB. Ideally, I would run the MongoDB se
 Although that seems to be a bit complicated. I may just run the server locally.
 
 An alternative is to use something similar to Filebase from my C# project.
-
-### Part 2
-
-1. To follow...
