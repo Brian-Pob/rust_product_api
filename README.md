@@ -34,6 +34,17 @@ using `cargo add serde --features derive` as well as serde_json with `cargo add 
 
 First thing I need to do is let my product class derive the Serialize and Deserialize traits.
 
+8/19/2022
+I have successfully implemented serialization and deserialization. I found out that when you try to deserialize a mismatched JSON object, it will throw an error and Rust will panic.
+
+Now, I can try to implement MongoDB like I originally planned. However, I think I will try to implement testing first. Test Driver Developement
+has always been something I've wanted to try with any language and Rust seems to have a very easy to use TDD system.
+
+After that, I will try to implement MongoDB. Ideally, I would run the MongoDB server in a Docker container and connect to it from the Rust code.
+Although that seems to be a bit complicated. I may just run the server locally.
+
+An alternative is to use something similar to Filebase from my C# project.
+
 ### Part 2
 
 1. To follow...
